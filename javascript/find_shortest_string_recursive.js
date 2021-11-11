@@ -26,6 +26,23 @@ if (require.main === module) {
 
   console.log("Expecting: 'lily'");
   console.log("=>", findShortestStringRecursive(['flower', 'juniper', 'lily', 'dandelion']));
+
+  const startTime = new Date()
+
+  const longInput = []
+
+  for(let i = 0; i < 100; i ++){
+    longInput.push(Math.random().toString())
+  }
+
+  for(let i = 0; i < 1000; i++) {
+    findShortestStringRecursive(["dog","kitty", "birb"])
+    findShortestStringRecursive(longInput)
+  }
+
+  const averageRuntime = (new Date() - startTime) / 2000
+
+  console.log(averageRuntime)
 }
 
 module.exports = findShortestStringRecursive;
